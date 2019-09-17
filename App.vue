@@ -36,7 +36,7 @@
               </a>
             </li>
             <li class="nav-list-item">
-              <a href="javascript:;">
+              <a href="javascript:;" @click="copyEmail">
                 <img src="assets/envelope-solid.svg" alt="email-icon" />
               </a>
             </li>
@@ -126,8 +126,24 @@
 
 <script>
 import Vue from 'vue';
+import VueClipboard from 'vue-clipboard2';
 
-export default Vue.extend({});
+Vue.use(VueClipboard);
+
+export default Vue.extend({
+  data() {
+    return { encodedEmail: 'dmJubTEyM2MrcmVzdW1lQGdtYWlsLmNvbQ==' };
+  },
+  methods: {
+    copyEmail() {
+      const decodedEmail = atob(this.encodedEmail);
+      this.$copyText(decodedEmail).then(
+        () => alert('已複製到剪貼簿'),
+        () => alert(decodedEmail),
+      );
+    },
+  },
+});
 </script>
 
 <style scoped>

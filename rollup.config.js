@@ -17,6 +17,7 @@ export default {
     resolve(),
     commonjs(),
     vue(),
+    /* https://github.com/rollup/rollup/issues/487 */
     replace({
       'process.env.NODE_ENV': JSON.stringify('production'),
     }),

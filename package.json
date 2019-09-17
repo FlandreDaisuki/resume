@@ -1,0 +1,35 @@
+{
+  "name": "resume",
+  "version": "1.0.0",
+  "description": "My resume",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel index.html",
+    "build": "parcel build index.html --out-dir docs --no-source-maps"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlandreDaisuki/resume.git"
+  },
+  "author": "FlandreDaisuki",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/FlandreDaisuki/resume/issues"
+  },
+  "homepage": "https://github.com/FlandreDaisuki/resume#readme",
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^3.0.0",
+    "@vue/eslint-config-prettier": "^5.0.0",
+    "eslint": "^5",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-vue": "^5.2.3",
+    "parcel-bundler": "^1.12.3",
+    "prettier": "^1.18.2",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "dependencies": {
+    "vue": "^2.6.10",
+    "vue-hot-reload-api": "^2.3.4"
+  }
+}

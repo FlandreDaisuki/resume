@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "parcel index.html --public-url '.'",
+    "dev": "parcel index.html",
     "build": "rm -rf docs/* && parcel build index.html --out-dir docs --no-source-maps --public-url '.'"
   },
   "repository": {

@@ -81,9 +81,8 @@
         </h3>
         <p>
           目前最大的一個玩具專案。目的是利用 userscript 在 pixiv
-          頁面增加一個工具列，功能有關鍵字過濾、大圖瀏覽等。
-          <br />利用 rollup 與 vuejs 打包建置，並插入到基於 reactjs
-          開發的網站中，為此還另外寫了一個
+          頁面增加一個工具列，功能有關鍵字過濾、大圖瀏覽等。 利用 rollup 與
+          vuejs 打包建置，並插入到基於 reactjs 開發的網站中，為此還另外寫了一個
           <a
             href="https://github.com/FlandreDaisuki/rollup-plugin-userscript-metablock"
             target="_blank"
@@ -102,8 +101,7 @@
         </h3>
         <p>
           因為看動畫常常追很多新番，但常常忘記哪一部動畫看到第幾集，這個工具是幫我記住並自動下載最新一集的新番。
-          <br />為了讓朋友們也能使用，利用 docker
-          打包以方便建置，並支援多種下載器。
+          為了讓朋友們也能使用，利用 docker 打包以方便建置，並支援多種下載器。
         </p>
         <h3 class="work-title">
           <a
@@ -117,7 +115,7 @@
           Facebook 利用在連結網址參數
           <code>fbclid</code>
           來追蹤使用者，讓網址變得難以識別，可能造成資安問題(SSRF)。
-          <br />很多工具只針對網址欄但並沒有解決網路請求對使用者的追蹤。此瀏覽器擴充套件就可以一次解決這兩個問題。
+          很多工具只針對網址欄但並沒有解決網路請求對使用者的追蹤。此瀏覽器擴充套件就可以一次解決這兩個問題。
         </p>
       </div>
     </div>
@@ -147,11 +145,17 @@ export default Vue.extend({
 </script>
 
 <style scoped>
+a {
+  color: darkblue;
+}
 #app {
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
+}
+#app-container {
+  max-width: 900px;
 }
 #profile {
   text-align: center;
@@ -187,6 +191,5 @@ export default Vue.extend({
 }
 .work-title > a {
   text-decoration: none;
-  color: darkblue;
 }
 </style>

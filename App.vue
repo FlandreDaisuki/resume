@@ -21,6 +21,7 @@
                 target="_blank"
               >
                 <img src="assets/github-brands.svg" alt="github-icon" />
+                <span class="nav-list-item-text">FlandreDaisuki</span>
               </a>
             </li>
             <li class="nav-list-item">
@@ -33,11 +34,7 @@
                   src="assets/facebook-square-brands.svg"
                   alt="facebook-icon"
                 />
-              </a>
-            </li>
-            <li class="nav-list-item">
-              <a href="javascript:;" @click="copyEmail">
-                <img src="assets/envelope-solid.svg" alt="email-icon" />
+                <span class="nav-list-item-text">flandredaisuki</span>
               </a>
             </li>
             <li class="nav-list-item">
@@ -47,7 +44,14 @@
                 target="_blank"
               >
                 <img src="assets/telegram-brands.svg" alt="telegram-icon" />
+                <span class="nav-list-item-text">flandrekawaii</span>
               </a>
+            </li>
+            <li class="nav-list-item">
+              <a href="javascript:;" @click="copyEmail">
+                <img src="assets/envelope-solid.svg" alt="email-icon" />
+              </a>
+              <span class="nav-list-item-text"></span>
             </li>
           </ul>
         </nav>
@@ -132,12 +136,23 @@ export default Vue.extend({
   data() {
     return { encodedEmail: 'dmJubTEyM2MrcmVzdW1lQGdtYWlsLmNvbQ==' };
   },
+  computed: {
+    decodedEmail() {
+      return window.atob(this.encodedEmail);
+    },
+  },
+  mounted() {
+    const style = document.createElement('style');
+    style.textContent = `.nav-list-item:nth-child(4) > .nav-list-item-text::after {
+      content: "${this.decodedEmail}";
+    }`;
+    document.head.appendChild(style);
+  },
   methods: {
     copyEmail() {
-      const decodedEmail = atob(this.encodedEmail);
-      this.$copyText(decodedEmail).then(
+      this.$copyText(this.decodedEmail).then(
         () => alert('已複製到剪貼簿'),
-        () => alert(decodedEmail),
+        () => alert(this.decodedEmail),
       );
     },
   },
@@ -182,14 +197,20 @@ a {
   height: 32px;
 }
 .nav-list-item {
-  display: inline-flex;
   margin: 0 10px;
 }
+.nav-list-item,
 .nav-list-item > a {
   display: inline-flex;
   align-items: center;
 }
+.nav-list-item > a,
 .work-title > a {
   text-decoration: none;
+}
+.nav-list-item-text {
+  display: none;
+  margin-left: 5px;
+  color: black;
 }
 </style>

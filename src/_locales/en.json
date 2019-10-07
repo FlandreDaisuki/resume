@@ -1,0 +1,17 @@
+{
+  "copiedToClipboard": "Copied!",
+  "educationTitle": "Education",
+  "educationList": [
+    "National Taiwan Normal University, Bachelor's degree, department of Computer Science and Information Engineering",
+    "National Chiao Tung University, Master's degree, Institute of Multimedia Engineering"
+  ],
+  "skillsTitle": "Skills",
+  "skills": {
+    "PL": "Programming Language",
+    "WFE": "Web Frontend",
+    "WBE": "Web Backend",
+    "SYS": "System",
+    "MISC": "Others"
+  },
+  "projectsTitle": "Projects"
+}

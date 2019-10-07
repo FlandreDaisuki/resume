@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel index.html",
-    "build": "rm -rf docs/* && parcel build index.html --out-dir docs --no-source-maps --public-url '.'"
+    "pre-build": "rm -rf docs/* && echo 'resume.flandre.tw' > docs/CNAME",
+    "build:resume": "parcel build index.html --out-dir docs/ --no-source-maps --public-url '.'",
+    "build": "yarn pre-build && yarn build:resume"
   },
   "repository": {
     "type": "git",
@@ -20,17 +22,17 @@
   "homepage": "https://github.com/FlandreDaisuki/resume#readme",
   "devDependencies": {
     "@vue/component-compiler-utils": "^3.0.0",
-    "@vue/eslint-config-prettier": "^5.0.0",
     "eslint": "^5",
-    "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-vue": "^5.2.3",
     "parcel-bundler": "^1.12.3",
-    "prettier": "^1.18.2",
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
     "vue": "^2.6.10",
     "vue-clipboard2": "^0.3.1",
-    "vue-hot-reload-api": "^2.3.4"
+    "vue-hot-reload-api": "^2.3.4",
+    "vue-i18n": "^8.14.1",
+    "vue-router": "^3.1.3",
+    "vuex": "^3.1.1"
   }
 }

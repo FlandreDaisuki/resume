@@ -10,8 +10,10 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:vue/recommended",
-    "@vue/prettier"
+    "plugin:vue/recommended"
   ],
-  "rules": {}
+  "rules": {
+    "no-console": "off",
+    "vue/max-attributes-per-line": "off"
+  }
 }

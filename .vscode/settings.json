@@ -1,13 +1,28 @@
 {
     "eslint.autoFixOnSave": true,
     "editor.tabSize": 2,
-    "[vue]": {
-        "editor.formatOnSave": true
-    },
     "eslint.validate": [
         "javascript",
         "javascriptreact",
         { "language": "vue", "autoFix": true },
         { "language": "javascript", "autoFix": true }
+    ],
+    "cSpell.ignoreWords": [
+        "dm",
+        "ey",
+        "gdt",
+        "jub",
+        "l",
+        "lm",
+        "m",
+        "mrcm",
+        "nvb",
+        "q",
+        "t",
+        "tung",
+        "vzd",
+        "w",
+        "wls",
+        "y"
     ],
 }

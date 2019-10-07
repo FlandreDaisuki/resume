@@ -1,0 +1,19 @@
+{
+  "copiedToClipboard": "已複製到剪貼簿",
+  "educationTitle": "學歷",
+  "educationList": [
+    "國立師範大學 資訊工程系 學士",
+    "國立交通大學 多媒體工程研究所 碩士"
+  ],
+  "skillsTitle": "技能",
+  "skills": {
+    "PL": "程式語言",
+    "WFE": "網頁前端",
+    "WBE": "網頁後端",
+    "SYS": "系統",
+    "MISC": "其他"
+  },
+  "projectsTitle": "作品集"
+}
+
+

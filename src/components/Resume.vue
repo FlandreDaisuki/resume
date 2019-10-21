@@ -11,12 +11,12 @@
         <p id="intro">
           <template v-if="$i18n.locale ==='en'">
             <span>I think "Lazy" is a virtue of engineer, so I usually make side projects to automate my works.</span>
-            <span>The most familiar language is JavaScript, and also attend to different technical party or conference.</span>
+            <span>The most familiar language is JavaScript (self-learned in 4 years), and also attend to different technical party or conference.</span>
             <span>Recently, I'm interested in functional programming.</span>
           </template>
           <template v-if="$i18n.locale ==='zh-tw'">
             <span>認為懶惰是程式設計師的美德，常常撰寫玩具專案和工具讓日常瑣事自動化。</span>
-            <span>熟悉 JavaScript，也常常參與技術小聚和研討會學習不熟悉的語言和技術知識。</span>
+            <span>熟悉 JavaScript (自學四年)，也常常參與技術小聚和研討會學習不熟悉的語言和技術知識。</span>
             <span>近期對函數式程式設計有濃厚的興趣。</span>
           </template>
         </p>

@@ -60,11 +60,85 @@
       <div id="skills">
         <h2>{{ $t('skillsTitle') }}</h2>
         <ul>
-          <li>{{ $t('skills.PL') }}: JavaScript, Python, C</li>
-          <li>{{ $t('skills.WFE') }}: HTML5, CSS3, ES6, Vue, userscript, webextension</li>
-          <li>{{ $t('skills.WBE') }}: NodeJS, PHP, nginx</li>
-          <li>{{ $t('skills.SYS') }}: Linux, bash, Docker, Docker Compose</li>
-          <li>{{ $t('skills.MISC') }}: git, Computer Graphics</li>
+          <li class="skill-group">
+            <h3>{{ $t('skills.PL') }}</h3>
+            <ul>
+              <li class="skill-item">
+                JavaScript
+              </li>
+              <li class="skill-item">
+                Python
+              </li>
+              <li class="skill-item">
+                C
+              </li>
+            </ul>
+          </li>
+          <li class="skill-group">
+            <h3>{{ $t('skills.WFE') }}</h3>
+            <ul>
+              <li class="skill-item">
+                HTML5
+              </li>
+              <li class="skill-item">
+                CSS3
+              </li>
+              <li class="skill-item">
+                ES6
+              </li>
+              <li class="skill-item">
+                Vue
+              </li>
+              <li class="skill-item">
+                userscript
+              </li>
+              <li class="skill-item">
+                WebExtension
+              </li>
+            </ul>
+          </li>
+          <li class="skill-group">
+            <h3>{{ $t('skills.WBE') }}</h3>
+            <ul>
+              <li class="skill-item">
+                NodeJS
+              </li>
+              <li class="skill-item">
+                PHP
+              </li>
+              <li class="skill-item">
+                nginx
+              </li>
+            </ul>
+          </li>
+          <li class="skill-group">
+            <h3>{{ $t('skills.SYS') }}</h3>
+            <ul>
+              <li class="skill-item">
+                Linux
+              </li>
+              <li class="skill-item">
+                bash
+              </li>
+              <li class="skill-item">
+                Docker
+              </li>
+              <li class="skill-item">
+                Docker Compose
+              </li>
+            </ul>
+          </li>
+          <li class="skill-group">
+            <h3>{{ $t('skills.MISC') }}</h3>
+            <ul>
+              <li class="skill-item">
+                git
+              </li>
+              <li class="skill-item">
+                Computer Graphics
+              </li>
+            </ul>
+          </li>
         </ul>
       </div>
       <div id="works">
@@ -190,6 +264,7 @@ a {
 #avatar > img {
   border-radius: 50%;
   max-width: 128px;
+  max-height: 128px;
 }
 #intro > span {
   display: block;
@@ -219,5 +294,16 @@ a {
   display: none;
   margin-left: 5px;
   color: black;
+}
+.skill-group > h3 {
+  margin: 4px 0;
+}
+.skill-group .skill-item:first-child {
+  margin-left: 0;
+}
+.skill-item {
+  display: inline-block;
+  color: darkblue;
+  margin: 2px 6px;
 }
 </style>

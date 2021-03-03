@@ -1,0 +1,28 @@
+{
+  "name": "resume2",
+  "version": "0.0.0",
+  "license": "MIT",
+  "author": {
+    "name": "FlandreDaisuki",
+    "email": "vbnm123c@gmail.com"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.0.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.1.5",
+    "@vue/compiler-sfc": "^3.0.5",
+    "autoprefixer": "^10.2.4",
+    "eslint": "^7.21.0",
+    "eslint-plugin-vue": "^7.7.0",
+    "postcss": "^8.2.6",
+    "stylelint-config-recommended": "^3.0.0",
+    "tailwindcss": "^2.0.3",
+    "vite": "^2.0.5"
+  }
+}

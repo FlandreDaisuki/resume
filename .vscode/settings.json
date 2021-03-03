@@ -1,0 +1,15 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "css.validate": false,
+  "stylelint.enable": true,
+  "cSpell.words": [
+    "tailwindcss"
+  ],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "vue"
+  ]
+}

@@ -32,6 +32,12 @@
     "semi": ["error", "always"],
     "space-before-function-paren": ["error", "never"],
     "space-infix-ops": "error",
-    "template-curly-spacing": "error"
+    "template-curly-spacing": "error",
+    "vue/max-attributes-per-line": ["error", {
+      "multiline": {
+        "max": 1,
+        "allowFirstLine": true
+      }
+    }]
   }
 }

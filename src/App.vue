@@ -1,22 +1,29 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <header id="header">
+    <img
+      id="avatar"
+      alt="avatar"
+      src="./assets/avatar.jpg"
+    >
+    <div class="grid text-left">
+      <span class="text-3xl">連俊豪</span>
+      <span class="text-xl">Lien Chun-Hao</span>
+    </div>
+  </header>
+
+  <div>Hello world</div>
 </template>
 
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-
-// This starter template is using Vue 3 experimental <script setup> SFCs
-// Check out https://github.com/vuejs/rfcs/blob/script-setup-2/active-rfcs/0000-script-setup.md
 </script>
 
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+#header {
+  @apply flex justify-start;
+}
+
+#avatar {
+  @apply rounded-full w-16 inline-block mx-4;
 }
 </style>

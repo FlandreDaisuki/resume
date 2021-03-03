@@ -4,6 +4,7 @@
   },
   "css.validate": false,
   "stylelint.enable": true,
+  "vetur.validation.style": false,
   "cSpell.words": [
     "tailwindcss"
   ],
@@ -11,5 +12,9 @@
     "javascript",
     "javascriptreact",
     "vue"
-  ]
+  ],
+  "tailwindCSS.includeLanguages": {
+    "vue": "html",
+    "vue-html": "html",
+  },
 }

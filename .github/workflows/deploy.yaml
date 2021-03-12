@@ -1,0 +1,48 @@
+name: Build & Deploy page
+
+on:
+  push:
+    branches:
+      - "2021"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build & Deploy page
+    steps:
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+
+      - name: Checkout source
+        uses: actions/checkout@v2
+
+      - name: Build web page
+        run: npm i && npm run build
+
+      - name: Checkout page branch
+        uses: actions/checkout@v2
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Move web page files to gh-pages folder
+        run: |
+          rm -rf gh-pages/*
+          mv dist/* gh-pages/
+          echo resume.flandre.tw > gh-pages/CNAME
+
+      - name: Commit files
+        run: |
+          cd gh-pages/
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add .
+          git commit -m "Apply update pages"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          directory: gh-pages

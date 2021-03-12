@@ -34,6 +34,7 @@
     "space-infix-ops": "error",
     "template-curly-spacing": "error",
     "vue/max-attributes-per-line": ["error", {
+      "singleline": 999,
       "multiline": {
         "max": 1,
         "allowFirstLine": true

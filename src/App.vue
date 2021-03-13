@@ -167,7 +167,8 @@ const mailTo = () => openToNewTab(atob('bWFpbHRvOnZibm0xMjNjQGdtYWlsLmNvbQ=='));
 }
 
 .contact-list {
-  @apply text-left grid grid-cols-2 gap-x-2 mt-4 md:mt-0;
+  @apply text-left grid gap-x-2 mt-6 ;
+  @apply md:grid-cols-2 md:mt-0
 }
 .contact-list > li {
   @apply p-1;

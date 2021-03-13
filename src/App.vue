@@ -21,7 +21,7 @@
     </ul>
   </header>
 
-  <main class="md:layout-column-2 text-left">
+  <main class="print:layout-column-2 md:layout-column-2 text-left">
     <section class="about">
       <h2>關於我</h2>
       <p>
@@ -168,7 +168,8 @@ const mailTo = () => openToNewTab(atob('bWFpbHRvOnZibm0xMjNjQGdtYWlsLmNvbQ=='));
 
 .contact-list {
   @apply text-left grid gap-x-2 mt-6 ;
-  @apply md:grid-cols-2 md:mt-0
+  @apply md:grid-cols-2 md:mt-0;
+  @apply print:grid-cols-2 print:mt-0;
 }
 .contact-list > li {
   @apply p-1;
@@ -202,7 +203,6 @@ section > h3 {
 section > p {
   @apply my-2 text-gray-900;
   @apply ml-3 pl-4 border-0 border-l-2 border-dotted border-blue-800;
-
 }
 
 section.works > h3 > a {

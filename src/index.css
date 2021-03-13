@@ -26,4 +26,5 @@ html, body {
 #app {
   @apply container mx-auto p-4 text-center h-a4 max-w-a4;
   @apply md:p-16;
+  @apply print:p-16;
 }

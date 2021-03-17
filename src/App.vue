@@ -1,22 +1,28 @@
 <template>
-  <header id="header">
-    <img id="avatar" alt="avatar" src="./assets/avatar.jpg">
+  <header>
+    <img class="avatar" alt="avatar" src="./assets/avatar.jpg">
     <div class="grid text-left mr-auto">
       <span class="text-3xl">連俊豪</span>
       <span class="text-xl">Lien Chun-Hao</span>
     </div>
     <ul class="contact-list">
-      <li @click="mailTo">
-        <img src="./assets/envelope-solid.svg" alt="">
+      <li>
+        <a :href="mailTo" target="_blank">
+          <EmailIcon class="icon" />
         <span class="e-mail">@</span>
+        </a>
       </li>
-      <li @click="openToNewTab('https://github.com/FlandreDaisuki')">
-        <img src="./assets/github-brands.svg" alt="">
+      <li>
+        <a href="https://github.com/FlandreDaisuki" target="_blank">
+          <GitHubIcon class="icon" />
         <span>FlandreDaisuki</span>
+        </a>
       </li>
-      <li @click="openToNewTab('https://t.me/flandrekawaii')">
-        <img src="./assets/telegram-brands.svg" alt="">
+      <li>
+        <a href="https://t.me/flandrekawaii" target="_blank">
+          <TelegramIcon class="icon" />
         <span>@flandrekawaii</span>
+        </a>
       </li>
     </ul>
   </header>
@@ -72,7 +78,7 @@
       <h2>作品集</h2>
       <h3>
         <a target="_blank" href="https://github.com/FlandreDaisuki/Patchouli">
-          <img src="./assets/github-brands.svg" class="github-link-icon">
+          <GitHubIcon class="github-icon" />
           <span>Patchouli</span>
         </a>
       </h3>
@@ -81,7 +87,7 @@
       </p>
       <h3>
         <a target="_blank" href="https://github.com/FlandreDaisuki/rollup-plugin-userscript-metablock">
-          <img src="./assets/github-brands.svg" class="github-link-icon">
+          <GitHubIcon class="github-icon" />
           <span>rollup-plugin-userscript-metablock</span>
         </a>
       </h3>
@@ -90,7 +96,7 @@
       </p>
       <h3>
         <a target="_blank" href="https://github.com/FlandreDaisuki/dmhy-subscribe">
-          <img src="./assets/github-brands.svg" class="github-link-icon">
+          <GitHubIcon class="github-icon" />
           <span>dmhy-subscribe</span>
         </a>
       </h3>
@@ -99,7 +105,7 @@
       </p>
       <h3>
         <a target="_blank" href="https://github.com/FlandreDaisuki/Facebook-Dont-Track-Me">
-          <img src="./assets/github-brands.svg" class="github-link-icon">
+          <GitHubIcon class="github-icon" />
           <span>Facebook-Dont-Track-Me</span>
         </a>
       </h3>
@@ -108,7 +114,7 @@
       </p>
       <h3>
         <a target="_blank" href="https://github.com/FlandreDaisuki/My-Browser-Extensions">
-          <img src="./assets/github-brands.svg" class="github-link-icon">
+          <GitHubIcon class="github-icon" />
           <span>My-Browser-Extensions</span>
         </a>
       </h3>
@@ -145,24 +151,19 @@
 </template>
 
 <script setup>
-const openToNewTab = (url) => {
-  const a = document.createElement('a');
-  a.href = url;
-  a.target = '_blank';
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-};
-const mailTo = () => openToNewTab(atob('bWFpbHRvOnZibm0xMjNjQGdtYWlsLmNvbQ=='));
+import GitHubIcon from './components/IconGitHub.vue';
+import EmailIcon from './components/IconEmail.vue';
+import TelegramIcon from './components/IconTelegram.vue';
+const email = 'dmJubTEyM2NAZ21haWwuY29t';
+const mailTo = `mailto:${atob(email)}`;
 </script>
 
-
 <style scoped>
-#header {
-  @apply flex flex-wrap items-center justify-start my-4;
+header {
+  @apply flex flex-wrap items-center justify-start p-2 relative;
 }
 
-#avatar {
+.avatar {
   @apply rounded-full w-16 h-16 inline-block mr-4;
 }
 
@@ -177,8 +178,8 @@ const mailTo = () => openToNewTab(atob('bWFpbHRvOnZibm0xMjNjQGdtYWlsLmNvbQ=='));
 .contact-list > li:hover {
   @apply text-green-700 cursor-pointer;
 }
-.contact-list > li > img {
-  @apply w-6 h-6 inline-block mr-2;
+.contact-list .icon {
+  @apply w-5 h-5 inline-block mr-2;
 }
 .e-mail {
   user-select: all;
@@ -208,8 +209,8 @@ section > p {
 section.works > h3 > a {
   @apply inline-flex items-center max-h-7;
 }
-section.works .github-link-icon {
-  @apply w-6 mr-2;
+section.works .github-icon {
+  @apply h-6 w-6 mr-2;
 }
 section.skills > .image-grid {
   @apply grid grid-cols-10 gap-4;

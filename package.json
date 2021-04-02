@@ -13,18 +13,19 @@
     "pdf": "node scripts/pdf.mjs"
   },
   "dependencies": {
-    "vue": "^3.0.11"
+    "vue": "^3.0.11",
+    "vue-i18n": "^9.1.4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.2.1",
     "@vue/compiler-sfc": "^3.0.11",
     "autoprefixer": "^10.2.5",
-    "eslint": "^7.23.0",
-    "eslint-plugin-vue": "^7.8.0",
+    "eslint": "^7.24.0",
+    "eslint-plugin-vue": "^7.9.0",
     "playwright": "^1.10.0",
-    "postcss": "^8.2.9",
+    "postcss": "^8.2.10",
     "stylelint-config-recommended": "^3.0.0",
-    "tailwindcss": "^2.0.4",
+    "tailwindcss": "^2.1.1",
     "vite": "^2.1.5"
   }
 }

@@ -6,6 +6,8 @@
   "stylelint.enable": true,
   "vetur.validation.style": false,
   "cSpell.words": [
+    "nctu",
+    "scada",
     "tailwindcss"
   ],
   "eslint.validate": [
@@ -17,4 +19,15 @@
     "vue": "html",
     "vue-html": "html",
   },
+  "cSpell.ignoreWords": [
+    "coscup",
+    "dmhy",
+    "hasura",
+    "jellyfin",
+    "jointjs",
+    "kubeless",
+    "metablock",
+    "openvino",
+    "usercss"
+  ],
 }

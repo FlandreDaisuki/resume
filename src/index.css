@@ -14,13 +14,11 @@
   @page {
     margin: 0;
   }
-  html, body {
-    font-size: 0.75rem;
-  }
 }
 
 html, body {
   @apply bg-gray-100;
+  @apply print:bg-transparent print:text-xs;
   font-family: 'Noto Sans TC', sans-serif;
 }
 

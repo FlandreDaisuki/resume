@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <select @change="onLocaleChange">
+    <select v-model="locale">
       <option value="zh-TW">
         繁體中文
       </option>
@@ -181,7 +181,7 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref, watchEffect } from 'vue';
 import { useI18n } from 'vue-i18n';
 import GitHubIcon from './components/IconGitHub.vue';
 import EmailIcon from './components/IconEmail.vue';
@@ -208,13 +208,19 @@ export default {
       metablockDownloadsLastWeek.value = ` ${data.downloads} `;
     })().catch(console.error);
 
+    if (window.location.search) {
+      locale.value = new URLSearchParams(window.location.search).get('lang') || 'zh-TW';
+    }
+
+    watchEffect(() => {
+      window.history.replaceState(null, '', `?lang=${locale.value}`);
+    });
+
     return {
       t,
+      locale,
       mailTo: `mailto:${atob(email)}`,
       metablockDownloadsLastWeek,
-      onLocaleChange: ($event) => {
-        locale.value = $event.target.value;
-      },
     };
   },
 };

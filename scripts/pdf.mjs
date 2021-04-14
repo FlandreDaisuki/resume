@@ -14,8 +14,8 @@ import { chromium } from 'playwright';
   };
 
   await Promise.all([
-    printToPDF('https://resume.flandre.tw?lang=zh-TW', './resume (zh-TW).pdf'),
-    printToPDF('https://resume.flandre.tw?lang=en', './resume (en).pdf'),
+    printToPDF('https://resume.flandre.tw?lang=zh-TW', './resume.zh-TW.pdf'),
+    printToPDF('https://resume.flandre.tw?lang=en', './resume.en.pdf'),
   ]);
 
   await browser.close();

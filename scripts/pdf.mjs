@@ -6,7 +6,7 @@ import { chromium } from 'playwright';
   const browser = await chromium.launch();
   const printToPDF = async(url, outName) => {
     const page = await browser.newPage();
-    await page.goto(url);
+    await page.goto(url, { waitUntil: 'networkidle' });
     await page.pdf({
       path: outName,
       pageRanges: '1',

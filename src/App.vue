@@ -49,53 +49,6 @@
       </i18n-t>
       <p>{{ t('about.paragraph[2]') }}</p>
     </section>
-    <section class="experience">
-      <h2>{{ t('experience.title') }}</h2>
-      <h3>
-        <span class="subtitle">{{ t('experience.list[0].header') }}</span>
-        <span class="duration">2019.11 ~ 2021.4</span>
-      </h3>
-      <i18n-t keypath="experience.list[0].paragraph[0]" tag="p">
-        <template #jointjs>
-          <a href="https://www.jointjs.com" target="_blank">joint.js</a>
-        </template>
-      </i18n-t>
-      <i18n-t keypath="experience.list[0].paragraph[1]" tag="p">
-        <template #openvino>
-          <a href="https://software.intel.com/content/www/us/en/develop/tools/openvino-toolkit.html" target="_blank">OpenVINO</a>
-        </template>
-      </i18n-t>
-      <p>{{ t('experience.list[0].paragraph[2]') }}</p>
-      <i18n-t keypath="experience.list[0].paragraph[3]" tag="p">
-        <template #hasura>
-          <a href="https://hasura.io" target="_blank">Hasura</a>
-        </template>
-        <template #compositionAPI>
-          <a href="https://github.com/vuejs/composition-api" target="_blank">Composition API</a>
-        </template>
-      </i18n-t>
-      <h3>
-        <span class="subtitle">{{ t('experience.list[1].header') }}</span>
-        <span class="duration">2015 ~ 2019</span>
-      </h3>
-      <p>{{ t('experience.list[1].paragraph[0]') }}</p>
-      <i18n-t keypath="experience.list[1].paragraph[1]" tag="p">
-        <template #electron>
-          <a href="https://www.electronjs.org" target="_blank">Electron</a>
-        </template>
-      </i18n-t>
-    </section>
-    <section class="education">
-      <h2>{{ t('education.title') }}</h2>
-      <h3>
-        <span class="subtitle">{{ t('education.Master') }}</span>
-        <span class="duration">2015 ~ 2019</span>
-      </h3>
-      <h3>
-        <span class="subtitle">{{ t('education.Bachelor') }}</span>
-        <span class="duration">2011 ~ 2015</span>
-      </h3>
-    </section>
     <section class="works">
       <h2>{{ t('works.title') }}</h2>
       <h3>
@@ -151,6 +104,42 @@
         </a>
       </h3>
       <p>{{ t('works.my') }}</p>
+    </section>
+    <section class="experience">
+      <h2>{{ t('experience.title') }}</h2>
+      <h3>
+        <span class="subtitle">{{ t('experience.list[0].header') }}</span>
+        <span class="duration">2019.11 ~ 2021.4</span>
+      </h3>
+      <i18n-t keypath="experience.list[0].paragraph[0]" tag="p">
+        <template #jointjs>
+          <a href="https://www.jointjs.com" target="_blank">joint.js</a>
+        </template>
+      </i18n-t>
+      <i18n-t keypath="experience.list[0].paragraph[1]" tag="p">
+        <template #openvino>
+          <a href="https://software.intel.com/content/www/us/en/develop/tools/openvino-toolkit.html" target="_blank">OpenVINO</a>
+        </template>
+      </i18n-t>
+      <i18n-t keypath="experience.list[0].paragraph[2]" tag="p">
+        <template #hasura>
+          <a href="https://hasura.io" target="_blank">Hasura</a>
+        </template>
+        <template #compositionAPI>
+          <a href="https://github.com/vuejs/composition-api" target="_blank">Composition API</a>
+        </template>
+      </i18n-t>
+    </section>
+    <section class="education">
+      <h2>{{ t('education.title') }}</h2>
+      <h3>
+        <span class="subtitle">{{ t('education.Master') }}</span>
+        <span class="duration">2015 ~ 2019</span>
+      </h3>
+      <h3>
+        <span class="subtitle">{{ t('education.Bachelor') }}</span>
+        <span class="duration">2011 ~ 2015</span>
+      </h3>
     </section>
     <section class="skills">
       <h2>{{ t('skills.title') }}</h2>

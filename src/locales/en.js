@@ -1,4 +1,5 @@
 const message = {
+  docLang: 'en',
   about: {
     title: 'About me',
     paragraph: [

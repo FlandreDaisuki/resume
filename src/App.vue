@@ -203,6 +203,7 @@ export default {
 
     watchEffect(() => {
       window.history.replaceState(null, '', `?lang=${locale.value}`);
+      document.documentElement.lang = t('docLang');
     });
 
     return {

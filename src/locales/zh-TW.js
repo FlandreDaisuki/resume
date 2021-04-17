@@ -1,4 +1,5 @@
 const message = {
+  docLang: 'zh-Hant-TW',
   about: {
     title: '關於我',
     paragraph: [

@@ -17,6 +17,10 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v2
 
+      - name: Get commit hash
+        id: commit_hash
+        run: echo "::set-output name=commit::$(git log -n 1 --pretty=format:'%h')"
+
       - name: Build web page
         run: npm i && npm run build
 
@@ -38,7 +42,7 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add .
-          git commit -m "Apply update pages" || echo "Nothing to update"
+          git commit -m "Apply ${{ steps.commit_hash.outputs.commit }}" || echo "Nothing to update"
 
       - name: Push changes
         uses: ad-m/github-push-action@master

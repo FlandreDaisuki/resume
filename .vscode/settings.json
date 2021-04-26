@@ -6,9 +6,12 @@
   "stylelint.enable": true,
   "vetur.validation.style": false,
   "cSpell.words": [
+    "echarts",
+    "jlpt",
     "nctu",
     "scada",
-    "tailwindcss"
+    "tailwindcss",
+    "vuetify"
   ],
   "eslint.validate": [
     "javascript",

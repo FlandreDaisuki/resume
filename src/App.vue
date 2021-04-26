@@ -49,6 +49,52 @@
       </i18n-t>
       <p>{{ t('about.paragraph[2]') }}</p>
     </section>
+    <section class="experience">
+      <h2>{{ t('experience.title') }}</h2>
+      <h3>
+        <span class="subtitle">{{ t('experience.list[0].header') }}</span>
+        <span class="duration">2019.11 ~ 2021.4</span>
+      </h3>
+
+      <i18n-t keypath="experience.list[0].paragraph[0]" tag="p">
+        <template #vuetify>
+          <a href="https://vuetifyjs.com" target="_blank">Vuetify</a>
+        </template>
+        <template #echarts>
+          <a href="https://echarts.apache.org/" target="_blank">Apache ECharts</a>
+        </template>
+        <template #jointjs>
+          <a href="https://www.jointjs.com" target="_blank">joint.js</a>
+        </template>
+      </i18n-t>
+      <i18n-t keypath="experience.list[0].paragraph[1]" tag="p">
+        <template #openvino>
+          <a href="https://software.intel.com/content/www/us/en/develop/tools/openvino-toolkit.html" target="_blank">OpenVINO</a>
+        </template>
+      </i18n-t>
+      <i18n-t keypath="experience.list[0].paragraph[2]" tag="p">
+        <template #hasura>
+          <a href="https://hasura.io" target="_blank">Hasura</a>
+        </template>
+        <template #compositionAPI>
+          <a href="https://github.com/vuejs/composition-api" target="_blank">Composition API</a>
+        </template>
+        <template #apollo>
+          <a href="https://www.apollographql.com/docs/react/" target="_blank">Apollo Client</a>
+        </template>
+      </i18n-t>
+    </section>
+    <section class="education">
+      <h2>{{ t('education.title') }}</h2>
+      <h3>
+        <span class="subtitle">{{ t('education.Master') }}</span>
+        <span class="duration">2015 ~ 2019</span>
+      </h3>
+      <h3>
+        <span class="subtitle">{{ t('education.Bachelor') }}</span>
+        <span class="duration">2011 ~ 2015</span>
+      </h3>
+    </section>
     <section class="works">
       <h2>{{ t('works.title') }}</h2>
       <h3>
@@ -72,7 +118,7 @@
           <a target="_blank" href="https://www.npmjs.com/package/rollup-plugin-userscript-metablock">{{ t('lastWeekDownloads', {count:metablockDownloadsLastWeek}) }}</a>
         </template>
       </i18n-t>
-      <h3>
+      <!-- <h3>
         <a target="_blank" href="https://github.com/FlandreDaisuki/dmhy-subscribe">
           <GitHubIcon class="github-icon" />
           <span>dmhy-subscribe</span>
@@ -82,7 +128,7 @@
         <template #jellyfin>
           <a target="_blank" href="https://jellyfin.org/">Jellyfin</a>
         </template>
-      </i18n-t>
+      </i18n-t> -->
       <h3>
         <a target="_blank" href="https://github.com/FlandreDaisuki/Facebook-Dont-Track-Me">
           <GitHubIcon class="github-icon" />
@@ -105,56 +151,20 @@
       </h3>
       <p>{{ t('works.my') }}</p>
     </section>
-    <section class="experience">
-      <h2>{{ t('experience.title') }}</h2>
-      <h3>
-        <span class="subtitle">{{ t('experience.list[0].header') }}</span>
-        <span class="duration">2019.11 ~ 2021.4</span>
-      </h3>
-      <i18n-t keypath="experience.list[0].paragraph[0]" tag="p">
-        <template #jointjs>
-          <a href="https://www.jointjs.com" target="_blank">joint.js</a>
-        </template>
-      </i18n-t>
-      <i18n-t keypath="experience.list[0].paragraph[1]" tag="p">
-        <template #openvino>
-          <a href="https://software.intel.com/content/www/us/en/develop/tools/openvino-toolkit.html" target="_blank">OpenVINO</a>
-        </template>
-      </i18n-t>
-      <i18n-t keypath="experience.list[0].paragraph[2]" tag="p">
-        <template #hasura>
-          <a href="https://hasura.io" target="_blank">Hasura</a>
-        </template>
-        <template #compositionAPI>
-          <a href="https://github.com/vuejs/composition-api" target="_blank">Composition API</a>
-        </template>
-      </i18n-t>
-    </section>
-    <section class="education">
-      <h2>{{ t('education.title') }}</h2>
-      <h3>
-        <span class="subtitle">{{ t('education.Master') }}</span>
-        <span class="duration">2015 ~ 2019</span>
-      </h3>
-      <h3>
-        <span class="subtitle">{{ t('education.Bachelor') }}</span>
-        <span class="duration">2011 ~ 2015</span>
-      </h3>
-    </section>
     <section class="skills">
       <h2>{{ t('skills.title') }}</h2>
       <h3>{{ t('skills.web') }}</h3>
       <ul>
         <li><img src="./assets/skills/LogosVue.svg" alt="vue"><span>Vue2 &amp; 3</span></li>
         <li><img src="./assets/skills/VscodeIconsFileTypeCss.svg" alt="css"><span>CSS3</span></li>
-        <li><img src="./assets/skills/VscodeIconsFileTypeJsOfficial.svg" alt="js"><span>JavaScript (ES6)</span></li>
+        <li><img src="./assets/skills/VscodeIconsFileTypeJsOfficial.svg" alt="js"><span>JavaScript</span></li>
         <li><img src="./assets/skills/LogosGraphql.svg" alt="graphql"><span>GraphQL</span></li>
         <li><img src="./assets/skills/LogosNodejsIcon.svg" alt="nodejs"><span>NodeJS</span></li>
         <li><img src="./assets/skills/LogosRollupjs.svg" alt="rollup"><span>Rollup</span></li>
       </ul>
       <h3>{{ t('skills.languages') }}</h3>
       <ul>
-        <li><img src="./assets/skills/VscodeIconsFileTypeJsOfficial.svg" alt="js"><span>JavaScript (ES6)</span></li>
+        <li><img src="./assets/skills/VscodeIconsFileTypeJsOfficial.svg" alt="js"><span>JavaScript</span></li>
         <li><img src="./assets/skills/VscodeIconsFileTypeKotlin.svg" alt="kotlin"><span>Kotlin</span></li>
         <li><img src="./assets/skills/VscodeIconsFileTypePython.svg" alt="python"><span>Python3</span></li>
       </ul>
@@ -164,6 +174,12 @@
         <li><img src="./assets/skills/LogosDockerIcon.svg" alt="docker"><span>Docker &amp; Docker Compose</span></li>
         <li><img src="./assets/skills/LogosLinuxTux.svg" alt="linux server"><span>Linux server</span></li>
         <li><img src="./assets/skills/LogosOpengl.svg" alt="Computer Graphics"><span>Computer Graphics</span></li>
+      </ul>
+      <h3>{{ t('skills.naturalLanguages') }}</h3>
+      <ul>
+        <li><img src="./assets/skills/TwemojiManGesturingOk.svg" alt="can speak">{{ t('skills.Mandarin') }}</li>
+        <li><img src="./assets/skills/TwemojiManGesturingOk.svg" alt="can speak">{{ t('skills.Japanese') }}</li>
+        <li><img src="./assets/skills/TwemojiManGesturingOk.svg" alt="can speak">{{ t('skills.English') }}</li>
       </ul>
     </section>
   </main>
@@ -264,7 +280,7 @@ section > h2 {
   @apply my-3 text-xl text-green-500;
 }
 section > h3 {
-  @apply flex my-3 text-lg items-baseline;
+  @apply flex py-1 my-2 text-lg items-baseline;
 }
 section > p {
   @apply my-2 text-gray-900;
@@ -272,7 +288,6 @@ section > p {
 }
 section > p > a {
   @apply text-indigo-800;
-  @apply print:text-gray-900;
 }
 
 section.works > h3 > a {

@@ -3,12 +3,13 @@ const message = {
   about: {
     title: 'About me',
     paragraph: [
-      `I'm a front-end engineer that like using web tech to simplify routines.
+      `I am a front-end engineer that like using web tech to simplify routines.
       My favorite environment is Linux, Firefox and VSCode.
-      I built some toy projects for my habits and shared source on GitHub, then surprisingly got some feedbacks and thumbs from communities.`,
+      I built some toy projects for my habits and shared source on GitHub, then surprisingly got feedbacks and thumbs from communities.`,
       `I usually participate in technical community activities or meetups, such as {coscup}.
-      I often learn news from newsletters like JavaScript Weekly and discuss with others on telegram groups.`,
-      'Recently, I\'m interested in cloud service, UX design, software architecture and DBMS.',
+      I often learn new knowledge from newsletters like JavaScript Weekly and discuss with others on telegram groups.`,
+      `My short-term goal is researching the best practice for cross-platform UI development.
+      Recently, I am also interested in cloud service, software architecture and DBMS.`,
     ],
   },
   experience: {
@@ -17,11 +18,15 @@ const message = {
       // https://vue-i18n.intlify.dev/guide/migration/breaking.html#special-character-handling
       header: 'Software Engineer {\'@\'} MiTAC Inc.',
       paragraph: [
-        'In the first half of the year, I focused on connecting IOT devices and cooperated with designers to complete the dashboard which can visualize device data. And, built up the entire SCADA HMI by {jointjs} almost independently.',
-        `After previous task, I was asked to learn Kotlin and finished some services for Spring Boot and deployed to our internal k8s.
-        At the same time, I modified {openvino} examples and designed a PoC (Proof of Concept) website that demonstrate
-        the data flow. It has finally become a core module in our new project.`,
-        'In mid-February, we changed back-end architecture to {hasura}. I lead to import {compositionAPI} and GraphQL to our Vue2 project.',
+        `I cooperated with designers to complete the IOT dashboard ans visualized devices status by {vuetify} and {echarts} in my first task.
+        We also tried our best to make it support multiple platforms.
+        Then, I rewrote the entire SCADA HMI by {jointjs} almost independently to replace a legacy floor plan component.`,
+        `After previous task, I studied Kotlin and finished some services for Spring Boot and deployed to our internal k8s.
+        At the same time, I modified {openvino} examples and designed a PoC website that demonstrate the data flow.
+        It has finally become a core module in our new project.`,
+        `Few weeks later, our leader decided to change back-end architecture to {hasura}.
+        I introduced {compositionAPI} and {apollo} to our Vue2 project
+        and built up a product management system website to replace the original one.`,
       ],
     }],
   },
@@ -34,9 +39,9 @@ const message = {
     title: 'Works',
     Patchouli: `This is the largest project completed during the master's class and get the largest number of stars in GitHub.
     The project is an userscript which crawls website and filters data, made by Vue2 and Rollup.
-    It is also the project make me familiar with cooperation open source with others, git commands and ecosystem of JavaScript.`,
-    metablock: `A helper npm package is built for {patchouli} development,
-    which also receives good feedbacks from userscript developers.
+    It is also the project making me familiar with open source collaboration, git commands and ecosystem of JavaScript.`,
+    metablock: `A helper npm package built for {patchouli} development,
+    which also receives good feedbacks from other userscript developers.
     {lastWeekDownloads}`,
     dmhy: `Another crawler toy project which is a CLI tool that help me remember which anime episode I've seen.
     It is also my first project to contact and use docker.
@@ -48,8 +53,12 @@ const message = {
   skills: {
     title: 'Skills',
     web: 'Web Technologies',
-    languages: 'Programming Language',
+    languages: 'Programming Languages',
     others: 'Others',
+    naturalLanguages: 'Natural Languages',
+    Mandarin: 'Mandarin',
+    Japanese: 'Japanese (JLPT N2)',
+    English: 'English',
   },
   url: {
     COSCUP: 'https://coscup.org/2020/en',

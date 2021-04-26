@@ -6,7 +6,8 @@ const message = {
       '喜歡用網頁技術解決日常問題的前端工程師，開發環境是 Linux + vscode + Firefox。開發過若干與個人興趣相關的玩具專案，並分享到社群中獲得好評。',
       `平時會參與技術社群活動像 {coscup} 和各種語言或框架的 meetup 等，常常在 telegram 的技術頻道中和其他人交流討論。
       也有訂閱如 JavaScript Weekly 等電子報學習新知。`,
-      '目前對雲服務、UX設計、後端架構及資料庫有興趣。',
+      `研究如何開發及維護跨平台前端程式碼的最佳實踐是我近期最大的學習目標。
+      除此之外，也對雲服務、後端架構及資料庫有興趣。`,
     ],
   },
   experience: {
@@ -14,10 +15,12 @@ const message = {
     list: [{
       header: '神達電腦軟體工程師',
       paragraph: [
-        '前半年專注於串接 IOT 裝置的控制及與設計合作完成 dashboard 及裝置數值視覺化，也使用 {jointjs} 幾乎獨立完成整套圖控系統。',
+        `第一個專案使用了 {vuetify} 及 {echarts} 完成 IOT 裝置的控制頁面及儀表板統計資料，並且確保在不同裝置上都可以正常操作。
+        當時需要擴充一個難以維護的平面圖元件，和團隊討論後我使用 {jointjs} 幾乎獨立重寫整套圖控系統。`,
         `在前一個專案吿一段落後，開始學習 Kotlin 語言並完成數個 Spring Boot 服務並部屬到內部的 k8s 上。
-        同時，改寫 {openvino} 範例程式並設計一整套資料流 PoC，最終成為新專案系統的核心模組。`,
-        '農曆年前後，因應後端架構轉為 {hasura}，負責在我們的 Vue2 專案導入 {compositionAPI} 及 GraphQL。',
+        同時，改寫 {openvino} 範例程式並設計一整套資料流 PoC 網站，最終成為新專案系統的核心模組。`,
+        `完成以上任務後，因應後端架構轉為 {hasura}，我負責在我們的 Vue2 專案導入 {compositionAPI} 及 {apollo}。
+        並且寫了整個商品管理系統後台網頁來取代原本的解決方案。`,
       ],
     }],
   },
@@ -42,6 +45,10 @@ const message = {
     web: '網頁技術',
     languages: '程式語言',
     others: '其他開發相關',
+    naturalLanguages: '自然語言',
+    Mandarin: '中文',
+    Japanese: '日文（JLPT N2）',
+    English: '英文',
   },
   url: {
     COSCUP: 'https://coscup.org/2020/zh-TW/',

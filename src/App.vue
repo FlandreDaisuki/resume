@@ -190,6 +190,11 @@
           <img src="./assets/MdiQrcodeScan.svg" alt="get QR code">
         </button>
       </li>
+      <li>
+        <a target="_blank" :href="pdfDownloadUrl">
+          <img src="./assets/CarbonDocumentPdf.svg" alt="get PDF">
+        </a>
+      </li>
     </ul>
     <Overlay v-model:enabled="isQrcodeOverlayEnabled">
       <img :src="qrcodeDataUrl" alt="QR code to this resume">
@@ -198,7 +203,7 @@
 </template>
 
 <script>
-import { ref, watchEffect } from 'vue';
+import { computed, ref, watchEffect } from 'vue';
 import { useI18n } from 'vue-i18n';
 import QRCode from 'qrcode';
 import Overlay from './components/Overlay.vue';
@@ -227,6 +232,24 @@ export default {
       metablockDownloadsLastWeek.value = ` ${data.downloads} `;
     })().catch(console.error);
 
+    const ghTag = ref('');
+    const pdfDownloadUrl = computed(() => ghTag.value
+      ? `https://github.com/FlandreDaisuki/resume/releases/download/${ghTag.value}/resume.${locale.value}.pdf`
+      : 'https://github.com/FlandreDaisuki/resume/releases/latest');
+
+    (async() => {
+      // https://docs.github.com/en/rest/reference/repos#get-the-latest-release
+      const url = 'https://api.github.com/repos/FlandreDaisuki/resume/releases/latest';
+      const resp = await fetch(url);
+      if (!resp.ok) {
+        const { status, statusText } = resp;
+        throw new Error(`FetchError: ${status} ${statusText}`);
+      }
+      const data = await resp.json();
+      ghTag.value = data.tag_name;
+    })().catch(console.error);
+
+
     if (window.location.search) {
       locale.value = new URLSearchParams(window.location.search).get('lang') || 'zh-TW';
     }
@@ -253,6 +276,7 @@ export default {
       metablockDownloadsLastWeek,
       isQrcodeOverlayEnabled,
       qrcodeDataUrl,
+      pdfDownloadUrl,
     };
   },
 };
@@ -344,6 +368,6 @@ footer {
   @apply print:hidden;
 }
 footer > ul > li {
-  @apply inline-block;
+  @apply inline-block mx-2;
 }
 </style>

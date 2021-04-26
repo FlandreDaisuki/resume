@@ -183,17 +183,31 @@
       </ul>
     </section>
   </main>
+  <footer>
+    <ul>
+      <li>
+        <button @click="isQrcodeOverlayEnabled = true">
+          <img src="./assets/MdiQrcodeScan.svg" alt="get QR code">
+        </button>
+      </li>
+    </ul>
+    <Overlay v-model:enabled="isQrcodeOverlayEnabled">
+      <img :src="qrcodeDataUrl" alt="QR code to this resume">
+    </Overlay>
+  </footer>
 </template>
 
 <script>
 import { ref, watchEffect } from 'vue';
 import { useI18n } from 'vue-i18n';
+import QRCode from 'qrcode';
+import Overlay from './components/Overlay.vue';
 import GitHubIcon from './components/IconGitHub.vue';
 import EmailIcon from './components/IconEmail.vue';
 import TelegramIcon from './components/IconTelegram.vue';
 
 export default {
-  components: { GitHubIcon, EmailIcon, TelegramIcon },
+  components: { Overlay, GitHubIcon, EmailIcon, TelegramIcon },
   setup() {
     const { t, locale } = useI18n();
     const email = 'dmJubTEyM2NAZ21haWwuY29t';
@@ -217,9 +231,19 @@ export default {
       locale.value = new URLSearchParams(window.location.search).get('lang') || 'zh-TW';
     }
 
+    const isQrcodeOverlayEnabled = ref(false);
+    const qrcodeDataUrl = ref('');
     watchEffect(() => {
       window.history.replaceState(null, '', `?lang=${locale.value}`);
       document.documentElement.lang = t('docLang');
+
+      QRCode.toDataURL(window.location.href, { margin: 2 }, (err, url) => {
+        if (err) {
+          console.error(err);
+          return;
+        }
+        qrcodeDataUrl.value = url;
+      });
     });
 
     return {
@@ -227,6 +251,8 @@ export default {
       locale,
       mailTo: `mailto:${atob(email)}`,
       metablockDownloadsLastWeek,
+      isQrcodeOverlayEnabled,
+      qrcodeDataUrl,
     };
   },
 };
@@ -311,5 +337,13 @@ section.education > h3 {
 
 .duration {
   @apply pl-2 text-green-700 text-sm;
+}
+
+footer {
+  @apply py-2 my-2 border-t-2 border-gray-300;
+  @apply print:hidden;
+}
+footer > ul > li {
+  @apply inline-block;
 }
 </style>

@@ -5,7 +5,8 @@ const message = {
     paragraph: [
       `I am a front-end engineer that like using web tech to simplify routines.
       My favorite environment is Linux, Firefox and VSCode.
-      I built some toy projects for my habits and shared source on GitHub, then surprisingly got feedbacks and thumbs from communities.`,
+      I built some personal side projects for my hobby and shared source on GitHub,
+      then surprisingly got feedbacks and thumbs from communities.`,
       `I usually participate in technical community activities or meetups, such as {coscup}.
       I often learn new knowledge from newsletters like JavaScript Weekly and discuss with others on telegram groups.`,
       `My short-term goal is researching the best practice for cross-platform UI development.

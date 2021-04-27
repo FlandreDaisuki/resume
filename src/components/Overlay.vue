@@ -1,6 +1,10 @@
 <template>
-  <div class="overlay" :class="overlayStyleClass" @click="onOutsideClick">
-    <div class="inner-overlay" @click.stop>
+  <div class="overlay"
+       :class="overlayStyleClass"
+       @pointerdown="onOutsidePointerDown"
+       @touchstart="onOutsidePointerDown"
+  >
+    <div class="inner-overlay" @pointerdown.stop @touchstart.stop>
       <slot />
     </div>
   </div>
@@ -19,7 +23,7 @@ export default {
         hidden: !props.enabled,
         flex: props.enabled,
       })),
-      onOutsideClick: () => emit('update:enabled', false),
+      onOutsidePointerDown: () => emit('update:enabled', false),
     };
   },
 };

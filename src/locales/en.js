@@ -9,7 +9,7 @@ const message = {
       then surprisingly got feedbacks and thumbs from communities.`,
       `I usually participate in technical community activities or meetups, such as {coscup}.
       I often learn new knowledge from newsletters like JavaScript Weekly and discuss with others on telegram groups.`,
-      `My short-term goal is researching the best practice for cross-platform UI development.
+      `About 5 years experience about web development and JavaScript. My short-term goal is researching the best practice for cross-platform UI development.
       Recently, I am also interested in cloud service, software architecture and DBMS.`,
     ],
   },

@@ -10,43 +10,17 @@ jobs:
     runs-on: ubuntu-latest
     name: Build & Deploy page
     steps:
+      - uses: actions/checkout@v2
+
       - uses: actions/setup-node@v2
         with:
           node-version: "14"
 
-      - name: Checkout source
-        uses: actions/checkout@v2
-
-      - name: Get commit hash
-        id: commit_hash
-        run: echo "::set-output name=commit::$(git log -n 1 --pretty=format:'%h')"
-
       - name: Build web page
-        run: npm i && npm run build
+        run: npm ci && npm run build
 
-      - name: Checkout page branch
-        uses: actions/checkout@v2
-        with:
-          ref: gh-pages
-          path: gh-pages
-
-      - name: Move web page files to gh-pages folder
-        run: |
-          rm -rf gh-pages/*
-          mv dist/* gh-pages/
-          echo resume.flandre.tw > gh-pages/CNAME
-
-      - name: Commit files
-        run: |
-          cd gh-pages/
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add .
-          git commit -m "Apply ${{ steps.commit_hash.outputs.commit }}" || echo "Nothing to update"
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
+      - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages
-          directory: gh-pages
+          publish_dir: ./dist
+          cname: resume.flandre.tw

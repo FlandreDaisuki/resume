@@ -3,10 +3,8 @@
 @tailwind utilities;
 
 @layer utilities {
-  @variants responsive {
-    .layout-column-2 {
-      columns: 2;
-    }
+  .layout-column-2 {
+    columns: 2;
   }
 }
 

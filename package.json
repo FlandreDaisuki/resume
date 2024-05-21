@@ -1,0 +1,15 @@
+{
+  "name": "resume-2024",
+  "version": "0.0.0",
+  "license": "MIT",
+  "author": {
+    "name": "FlandreDaisuki",
+    "email": "vbnm123c+github@gmail.com"
+  },
+  "scripts": {
+    "pdf": "node scripts/pdf.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.44.0"
+  }
+}

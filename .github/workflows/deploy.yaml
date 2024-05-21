@@ -1,0 +1,19 @@
+name: Build & Deploy page
+
+on:
+  push:
+    branches:
+      - "2024"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build & Deploy page
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          cname: resume.flandre.tw

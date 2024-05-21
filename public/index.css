@@ -1,0 +1,103 @@
+@keyframes link-hover-animation {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+html {
+  font-family: "Noto Sans", sans-serif;
+
+  @media print {
+    font-size: 15px;
+  }
+}
+body {
+  max-width: 720px;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+}
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
+  h1 {
+    padding-left: 5rem;
+
+    img#avatar {
+      position: absolute;
+      top: 0.5rem;
+      left: 0;
+      border-radius: 9999px;
+      height: 4rem;
+      width: 4rem;
+    }
+  }
+
+  ul#contact-list {
+    list-style: none;
+    padding: 0;
+
+    li > a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 1rem;
+
+      &:is(:hover, :active) {
+        color: darkgreen;
+      }
+    }
+  }
+}
+section#experience {
+  a {
+    color: green;
+    position: relative;
+
+    &:is(:hover, :active)::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      border-bottom: 1px solid currentColor;
+      transform-origin: left center;
+      animation: link-hover-animation 0.3s;
+    }
+  }
+}
+section#works {
+  h3 {
+    margin: 0.75rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    svg {
+      color: gold;
+      height: 1.2rem;
+      width: 1.2rem;
+    }
+
+    & + p {
+      margin: 0.5rem;
+      padding-left: 1rem;
+      border-left: 2px dotted darkslategray;
+    }
+  }
+}
+section#education {
+  h2 + p {
+    margin: 0;
+    padding-left: 1.5rem;
+  }
+}

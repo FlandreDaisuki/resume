@@ -12,8 +12,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: peaceiris/actions-gh-pages@v4
+      - uses: oven-sh/setup-bun@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          cname: resume.flandre.tw
+          bun-version: latest
+
+      - env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          DEPLOY_PROJECT_NAME: resume-flandre-tw
+          DEPLOY_BRANCH: master
+        run: |
+          bun x wrangler pages deploy public \
+          --project-name "${DEPLOY_PROJECT_NAME}" \
+          --branch "${DEPLOY_BRANCH}" \
+          --commit-dirty=true

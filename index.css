@@ -58,6 +58,11 @@ header {
     }
   }
 }
+@media print {
+  section > h2 {
+    margin: 1rem 0;
+  }
+}
 section#experience {
   a {
     color: green;
@@ -86,6 +91,11 @@ section#works {
       color: gold;
       height: 1.2rem;
       width: 1.2rem;
+    }
+
+    svg:has(+ a:hover) {
+      transform: rotateY(360deg);
+      transition: transform 1s;
     }
 
     & + p {

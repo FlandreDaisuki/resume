@@ -64,6 +64,14 @@ header {
   }
 }
 section#experience {
+  h3 {
+    display: flex;
+
+    .title-and-company {
+      margin-right: auto;
+    }
+  }
+
   a {
     color: green;
     position: relative;
@@ -80,7 +88,7 @@ section#experience {
     }
   }
 }
-section#works {
+section#projects {
   h3 {
     margin: 0.75rem 0;
     display: flex;

@@ -133,3 +133,17 @@ section#prompt-hacking {
   top: -9999px;
   left: -9999px;
 }
+
+footer {
+  @media print {
+    display: none;
+  }
+
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+
+  svg.pdf-icon {
+    height: 2rem;
+  }
+}

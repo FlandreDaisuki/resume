@@ -20,7 +20,7 @@ const URL = (process.env.NODE_ENV === 'debug')
   await Promise.all([
     // printToPDF(`${URL}?lang=zh-TW`, './resume.zh-TW.pdf'),
     // printToPDF(`${URL}?lang=en`, './resume.en.pdf'),
-    printToPDF(URL, './resume.pdf'),
+    printToPDF(URL, './Resume_LienChunHao.pdf'),
   ]);
 
   await browser.close();

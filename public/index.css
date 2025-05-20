@@ -135,15 +135,16 @@ section#prompt-hacking {
 }
 
 footer {
-  @media print {
-    display: none;
-  }
-
   display: flex;
   justify-content: flex-end;
   margin-top: 1rem;
 
   svg.pdf-icon {
     height: 2rem;
+  }
+}
+@media print {
+  footer {
+    display: none;
   }
 }

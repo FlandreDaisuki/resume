@@ -10,6 +10,6 @@
     "pdf": "node scripts/pdf.mjs"
   },
   "devDependencies": {
-    "playwright": "^1.44.0"
+    "playwright": "^1.52.0"
   }
 }

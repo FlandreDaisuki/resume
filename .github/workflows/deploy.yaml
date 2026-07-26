@@ -1,0 +1,30 @@
+name: Build & Deploy page
+
+on:
+  push:
+    branches:
+      - "2026"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build & Deploy page
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        # aka actions/checkout@v7.0.1
+
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
+        # aka oven-sh/setup-bun@v2.2.0
+        with:
+          bun-version: latest
+
+      - env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          DEPLOY_PROJECT_NAME: resume-flandre-tw
+          DEPLOY_BRANCH: master
+        run: |
+          bun x wrangler pages deploy public \
+          --project-name "${DEPLOY_PROJECT_NAME}" \
+          --branch "${DEPLOY_BRANCH}" \
+          --commit-dirty=true

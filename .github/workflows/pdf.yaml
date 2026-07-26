@@ -1,0 +1,39 @@
+name: Generate PDF to release
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build:
+    name: Generate PDF to release
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        # aka actions/checkout@v7.0.1
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        # aka actions/setup-node@v7.0.0
+        with:
+          node-version: "24"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Generate PDF
+        run: npm run pdf
+
+      - name: Upload & Release
+        uses: svenstaro/upload-release-action@29e53e917877a24fad85510ded594ab3c9ca12de
+        # aka svenstaro/upload-release-action@2.11.5
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: "*.pdf"
+          tag: ${{ github.ref }}
+          overwrite: true
+          file_glob: true

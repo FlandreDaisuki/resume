@@ -1,0 +1,18 @@
+{
+  "name": "resume-2026",
+  "version": "0.0.0",
+  "license": "MIT",
+  "author": {
+    "name": "FlandreDaisuki",
+    "email": "github@flandre.tw"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "pdf": "node scripts/pdf.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.62.0"
+  }
+}

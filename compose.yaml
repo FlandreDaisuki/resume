@@ -1,0 +1,26 @@
+services:
+  web:
+    image: nginx:1.31-alpine
+    ports:
+      - "${RESUME_PORT:-3000}:80"
+    volumes:
+      - ./public:/usr/share/nginx/html:ro
+
+  pdf:
+    build:
+      context: .
+      target: pdf
+    user: "$(id -u):$(id -g)"
+    command: ["pnpm", "run", "pdf"]
+    depends_on:
+      - web
+    environment:
+      RESUME_URL: http://web
+      PDF_OUTPUT: /output/Resume_LienChunHao.pdf
+    volumes:
+      - ./scripts:/app/scripts:ro
+      - ./output:/output
+    develop:
+      watch:
+        - action: restart
+          path: ./public

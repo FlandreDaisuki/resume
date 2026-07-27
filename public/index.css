@@ -3,14 +3,6 @@
   font-weight: 100 900;
   src: url(/NotoSans.woff2) format('woff2');
 }
-@keyframes link-hover-animation {
-  from {
-    transform: scale(0);
-  }
-  to {
-    transform: scale(1);
-  }
-}
 html {
   font-family: "Noto Sans", sans-serif;
 
@@ -80,21 +72,6 @@ section#experience {
     }
   }
 
-  a {
-    color: green;
-    position: relative;
-
-    &:is(:hover, :active)::after {
-      content: '';
-      display: block;
-      position: absolute;
-      width: 100%;
-      left: 0;
-      border-bottom: 1px solid currentColor;
-      transform-origin: left center;
-      animation: link-hover-animation 0.3s;
-    }
-  }
 }
 section#projects {
   h3 {

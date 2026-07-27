@@ -1,4 +1,4 @@
-FROM node:24-bookworm-slim AS pdf
+FROM node:26-bookworm-slim
 
 ARG PNPM_VERSION=11.0.0
 

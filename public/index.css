@@ -5,6 +5,7 @@
 }
 html {
   font-family: "Noto Sans", sans-serif;
+  letter-spacing: 0.01em;
 
   @media print {
     font-size: 15px;
@@ -22,6 +23,10 @@ a {
 }
 ul {
   padding-left: 1.7rem;
+
+  li + li {
+    margin-top: 0.2em;
+  }
 }
 header {
   display: flex;
@@ -62,6 +67,21 @@ header {
     animation: none !important;
   }
 
+  body {
+    box-sizing: border-box;
+    padding-block: 1.25rem;
+  }
+
+  main > section > h2 {
+    margin-block: 0.7em;
+  }
+
+  main ul,
+  section#experience h3,
+  section#projects > p {
+    margin-block: 0.8em;
+  }
+
   section > h2 {
     display: flex;
     align-items: center;
@@ -79,6 +99,8 @@ header {
 section#experience {
   h3 {
     display: flex;
+    gap: 0.4rem;
+    font-size: 1.15em;
 
     .title-and-company {
       margin-right: auto;

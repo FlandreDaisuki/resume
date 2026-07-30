@@ -1,0 +1,4 @@
+interface:
+  display_name: "Start Resume Preview"
+  short_description: "Open the live preview in a VS Code terminal"
+  default_prompt: "Use $start-resume-preview to start the local web and PDF preview."
